@@ -19,6 +19,6 @@ def test_search():
     time.sleep(7)
 
     elems = browser.find_elements(By.CSS_SELECTOR, "div#search div.yuRUbf a")
-    elems[7].click()
+    elems[10].click()
     time.sleep(5)
     browser.close()
