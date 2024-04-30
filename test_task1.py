@@ -24,7 +24,7 @@ def test_search_Firefox_br():
     browser.close()
 
 def test_search_Chorme_br():
-    browser = webdriver.Firefox()
+    browser = webdriver.Chrome()
     browser.maximize_window()
     browser.get('https://google.com/')
     consent = browser.find_element(By.ID, 'W0wltc')
