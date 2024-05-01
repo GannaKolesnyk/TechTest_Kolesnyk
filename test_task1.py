@@ -16,12 +16,20 @@ def test_search_Firefox_br():
     search_field.clear()
     search_field.send_keys('samsung galaxy')
     search_field.send_keys(Keys.RETURN)
-    time.sleep(7)
+    time.sleep(5)
 
+    href_links = []
     elems = browser.find_elements(By.CSS_SELECTOR, "div#search div.yuRUbf a")
-    elems[10].click()
+    for elem in elems:
+        l = elem.get_attribute("href")
+        if l not in href_links:
+            href_links.append(l)
+    # print()
+    # print(href_links)
+    elems[8].click()
     time.sleep(5)
     browser.close()
+
 
 def test_search_Chorme_br():
     browser = webdriver.Chrome()
@@ -33,9 +41,16 @@ def test_search_Chorme_br():
     search_field.clear()
     search_field.send_keys('samsung galaxy')
     search_field.send_keys(Keys.RETURN)
-    time.sleep(7)
+    time.sleep(5)
 
+    href_links = []
     elems = browser.find_elements(By.CSS_SELECTOR, "div#search div.yuRUbf a")
-    elems[10].click()
+    for elem in elems:
+        l = elem.get_attribute("href")
+        if l not in href_links:
+            href_links.append(l)
+    # print()
+    # print(href_links)
+    elems[8].click()
     time.sleep(5)
     browser.close()
